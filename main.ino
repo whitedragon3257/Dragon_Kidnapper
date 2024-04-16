@@ -4,8 +4,24 @@
 */
 // Bibliotecas necessárias
 #include <Arduino.h>
+#include <Servo.h>
+#include <LiquidCrystal.h>
 
-// As constantes e variáveis globais serão definidas aqui
+// Definicoes
+Servo motor1;
+Servo motor2;
+Servo motor3;
+Servo motor4;
+
+// Aqui é configurado o display LCD (pinos de conexão)
+const int rs = 12;
+const int en = 11;
+const int d4 = 5;
+const int d5 = 4;
+const int d6 = 3;
+const int d7 = 2;
+
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 // Módulo de Controle de Frequência
 void ajustarFrequencia() {
@@ -33,7 +49,13 @@ void verificarSeguranca() {
 }
 
 void setup() {
+  lcd.begin(16, 2);  // 16 colunas x 2 linhas
+  lcd.print("Frequencia: ");  // Mostrara a frequencia atual do software
   // O drone e o módulo de rádio será inicializado aqui
+  motor1.attach(3);
+  motor2.attach(5);
+  motor3.attach(6);
+  motor4.attach(9);
 }
 
 void loop() {
@@ -43,4 +65,13 @@ void loop() {
   processarDadosTelemetria();
   interagirComUsuario();
   verificarSeguranca();
+  
+  int velocidade = 1500; // Velocidade do motor (1000-2000)
+
+  motor1.writeMicroseconds(velocidade);
+  motor2.writeMicroseconds(velocidade);
+  motor3.writeMicroseconds(velocidade);
+  motor4.writeMicroseconds(velocidade);
+
+  delay(1000); // Tempo que o motor ficará ligado
 }
