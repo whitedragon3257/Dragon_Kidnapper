@@ -4,7 +4,7 @@
 
 1. **Frequency Control Module**: This module will be responsible for managing the drone's operating frequencies. It must be able to adjust frequencies as needed to ensure effective communication with the drone.
 
-2.**Flight Control Module**: This module will be responsible for issuing flight commands to the drone. This will include commands like take off, land, move left/right, etc.
+2. **Flight Control Module**: This module will be responsible for issuing flight commands to the drone. This will include commands like take off, land, move left/right, etc.
 
 3. **Telemetry Module**: This module will be responsible for receiving and processing the drone's telemetry data. This may include information such as current altitude,
 speed, direction, etc.
