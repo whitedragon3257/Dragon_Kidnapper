@@ -1,6 +1,8 @@
-# Dragon_Kidnapper
+# 🐉 Dragon_Kidnapper
 
-## Architecture
+Code project for Arduino, educational project, the intention of the code is that it operates at the frequencies used by drones, as soon as it reaches a frequency of a drone, that is, as soon as it comes into contact with the drone, it starts to have control of it. The project is ugly in Arduino (.ino) which is similar to C++.  
+
+## 🚧Architecture
 
 1. **Frequency Control Module**: This module will be responsible for managing the drone's operating frequencies. It must be able to adjust frequencies as needed to ensure effective communication with the drone.
 
